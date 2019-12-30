@@ -1,0 +1,5 @@
+cn/lovingliu/config/SwaggerConfig.class
+cn/lovingliu/controller/PassportController.class
+cn/lovingliu/Application.class
+cn/lovingliu/config/CorsConfig.class
+cn/lovingliu/aspect/ServiceLogAspect.class
