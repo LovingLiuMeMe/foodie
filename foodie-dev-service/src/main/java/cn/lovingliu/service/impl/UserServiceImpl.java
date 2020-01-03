@@ -1,6 +1,6 @@
 package cn.lovingliu.service.impl;
 
-import cn.lovingliu.bo.UserBO;
+import cn.lovingliu.pojo.bo.UserBO;
 import cn.lovingliu.common.enums.Sex;
 import cn.lovingliu.common.util.DateUtil;
 import cn.lovingliu.common.util.MD5Util;

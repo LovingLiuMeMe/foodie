@@ -125,4 +125,10 @@
       bg_color = #{bgColor,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectAllByType" resultMap="BaseResultMap" parameterType="int">
+    select
+    <include refid="Base_Column_List"/>
+    from category
+    where type = #{type}
+  </select>
 </mapper>

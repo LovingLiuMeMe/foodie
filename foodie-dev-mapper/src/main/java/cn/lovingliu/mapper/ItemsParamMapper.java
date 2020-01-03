@@ -14,4 +14,6 @@ public interface ItemsParamMapper {
     int updateByPrimaryKeySelective(ItemsParam record);
 
     int updateByPrimaryKey(ItemsParam record);
+
+    ItemsParam selectByItemId(String itemId);
 }

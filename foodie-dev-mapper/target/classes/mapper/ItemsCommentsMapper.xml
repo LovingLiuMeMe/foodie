@@ -150,4 +150,12 @@
       updated_time = #{updatedTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectByItemIdAndCommentLevel" resultType="java.lang.Integer">
+    select
+        count(id) as count
+    from
+        items_comments
+    where
+        item_id = #{itemId} and comment_level = #{commentLevel}
+  </select>
 </mapper>

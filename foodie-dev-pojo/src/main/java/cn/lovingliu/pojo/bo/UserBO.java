@@ -1,4 +1,4 @@
-package cn.lovingliu.bo;
+package cn.lovingliu.pojo.bo;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

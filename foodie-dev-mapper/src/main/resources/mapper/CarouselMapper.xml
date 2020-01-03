@@ -150,4 +150,13 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectAllByIsShow" parameterType="int" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from carousel
+    <where>
+      and is_show = #{isShow}
+    </where>
+    order by sort desc
+  </select>
 </mapper>

@@ -2,6 +2,8 @@ package cn.lovingliu.mapper;
 
 import cn.lovingliu.pojo.ItemsImg;
 
+import java.util.List;
+
 public interface ItemsImgMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface ItemsImgMapper {
     int updateByPrimaryKeySelective(ItemsImg record);
 
     int updateByPrimaryKey(ItemsImg record);
+
+    List<ItemsImg> selectByItemId(String itemId);
 }

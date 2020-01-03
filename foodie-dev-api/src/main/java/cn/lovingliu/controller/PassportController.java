@@ -1,6 +1,6 @@
 package cn.lovingliu.controller;
 
-import cn.lovingliu.bo.UserBO;
+import cn.lovingliu.pojo.bo.UserBO;
 import cn.lovingliu.common.ServerResponse;
 import cn.lovingliu.common.util.CookieUtils;
 import cn.lovingliu.common.util.JsonUtils;
@@ -67,6 +67,10 @@ public class PassportController {
         Users usersResult = userService.createUser(userBO);
         usersResult = setNullProperty(usersResult);
         CookieUtils.setCookie(request, response,"user", JsonUtils.objectToJson(usersResult),true);
+
+        // TODO 生成用户token,存入redis会话
+        // TODO 同步购物车数据
+
         return ServerResponse.createBySuccess("注册成功", usersResult);
     }
 
@@ -86,6 +90,10 @@ public class PassportController {
         }
         usersResult = setNullProperty(usersResult);
         CookieUtils.setCookie(request, response,"user", JsonUtils.objectToJson(usersResult),true);
+
+        // TODO 生成用户token,存入redis会话
+        // TODO 同步购物车数据
+
         return ServerResponse.createBySuccess("登录成功", usersResult);
     }
 

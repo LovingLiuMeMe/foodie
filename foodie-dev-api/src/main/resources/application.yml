@@ -25,3 +25,9 @@ mybatis:
   type-aliases-package: cn.lovingliu.pojo # 实体类映射
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 将数据库执行语句打印出来（仅仅在控制台上）
+
+# 分页插件配置
+pagehelper:
+  helper-dialect: mysql # 方言
+  support-methods-arguments: true # 分页参数传参
+

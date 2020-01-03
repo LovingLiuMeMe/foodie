@@ -1,14 +1,13 @@
 cn/lovingliu/mapper/CategoryMapper.class
 cn/lovingliu/mapper/UsersMapper.class
 cn/lovingliu/mapper/ItemsMapper.class
-cn/lovingliu/mapper/ItemsImgMapper.class
-cn/lovingliu/mapper/ItemsParamMapper.class
+cn/lovingliu/mapper/ItemsMapperCustom.class
 cn/lovingliu/mapper/OrdersMapper.class
 cn/lovingliu/mapper/UserAddressMapper.class
 cn/lovingliu/mapper/CarouselMapper.class
 cn/lovingliu/mapper/OrderStatusMapper.class
-cn/lovingliu/mapper/ItemsSpecMapper.class
 cn/lovingliu/mapper/ItemsCommentsMapper.class
 cn/lovingliu/mapper/StuMapper.class
 cn/lovingliu/config/MybatisConfig.class
+cn/lovingliu/mapper/CategoryMapperCustom.class
 cn/lovingliu/mapper/OrderItemsMapper.class

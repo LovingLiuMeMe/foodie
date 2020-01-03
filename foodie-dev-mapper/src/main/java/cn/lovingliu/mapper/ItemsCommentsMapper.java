@@ -14,4 +14,6 @@ public interface ItemsCommentsMapper {
     int updateByPrimaryKeySelective(ItemsComments record);
 
     int updateByPrimaryKey(ItemsComments record);
+
+    int selectByItemIdAndCommentLevel(String itemId, Integer commentLevel);
 }

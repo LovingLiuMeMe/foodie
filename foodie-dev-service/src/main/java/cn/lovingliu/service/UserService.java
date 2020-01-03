@@ -1,6 +1,6 @@
 package cn.lovingliu.service;
 
-import cn.lovingliu.bo.UserBO;
+import cn.lovingliu.pojo.bo.UserBO;
 import cn.lovingliu.pojo.Users;
 
 public interface UserService {
