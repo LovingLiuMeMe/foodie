@@ -33,26 +33,23 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.lovingliu.pojo.Orders" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into orders (user_id, receiver_name, receiver_mobile, 
+    insert into orders (id, user_id, receiver_name, receiver_mobile,
       receiver_address, total_amount, real_pay_amount, 
       post_amount, pay_method, left_msg, 
       extand, is_comment, is_delete, 
       created_time, updated_time)
-    values (#{userId,jdbcType=VARCHAR}, #{receiverName,jdbcType=VARCHAR}, #{receiverMobile,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{receiverName,jdbcType=VARCHAR}, #{receiverMobile,jdbcType=VARCHAR},
       #{receiverAddress,jdbcType=VARCHAR}, #{totalAmount,jdbcType=INTEGER}, #{realPayAmount,jdbcType=INTEGER}, 
       #{postAmount,jdbcType=INTEGER}, #{payMethod,jdbcType=INTEGER}, #{leftMsg,jdbcType=VARCHAR}, 
       #{extand,jdbcType=VARCHAR}, #{isComment,jdbcType=INTEGER}, #{isDelete,jdbcType=INTEGER}, 
       #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.lovingliu.pojo.Orders" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into orders
     <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
       <if test="userId != null" >
         user_id,
       </if>
@@ -97,6 +94,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
       </if>
@@ -207,4 +207,14 @@
       updated_time = #{updatedTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectByOrderIdAndUserId" parameterType="map" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"/>
+    from
+        orders
+    where
+      id = #{parmasMap.orderId}
+      and
+      user_id = #{parmasMap.userId}
+  </select>
 </mapper>

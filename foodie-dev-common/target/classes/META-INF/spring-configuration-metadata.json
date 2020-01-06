@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "name": "alipay",
+      "type": "cn.lovingliu.common.resource.AliPayResource",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    }
+  ],
+  "properties": [
+    {
+      "name": "alipay.alipay-public-key",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.app-id",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.charset",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.gateway-url",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.merchant-private-key",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.notify-url",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.return-url",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    },
+    {
+      "name": "alipay.sign-type",
+      "type": "java.lang.String",
+      "sourceType": "cn.lovingliu.common.resource.AliPayResource"
+    }
+  ],
+  "hints": []
+}

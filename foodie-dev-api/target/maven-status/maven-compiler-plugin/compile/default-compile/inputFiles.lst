@@ -1,7 +1,12 @@
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/ItemsController.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/aspect/ServiceLogAspect.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/TempResultController.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/AddressController.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/config/SwaggerConfig.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/PassportController.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/IndexController.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/ShopController.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/config/CorsConfig.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/PaymentController.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/Application.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-api/src/main/java/cn/lovingliu/controller/OrdersController.java

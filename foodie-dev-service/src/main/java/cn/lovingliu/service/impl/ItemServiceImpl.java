@@ -1,5 +1,6 @@
 package cn.lovingliu.service.impl;
 
+import cn.lovingliu.common.enums.YesOrNo;
 import cn.lovingliu.common.page.PagedGridResult;
 import cn.lovingliu.common.util.DesensitizationUtil;
 import cn.lovingliu.mapper.*;
@@ -135,5 +136,37 @@ public class ItemServiceImpl implements ItemService {
         List<String> specIdList = new ArrayList<>();
         Collections.addAll(specIdList, ids);
         return itemsMapperCustom.queryItemsBySpecIds(specIdList);
+    }
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public ItemsSpec queryItemSpecById(String itemSpecId) {
+        return itemsSpecMapper.selectByPrimaryKey(itemSpecId);
+    }
+    @Transactional(propagation = Propagation.SUPPORTS)
+    @Override
+    public ItemsImg queryItemMainImgById(String itemId) {
+        Map<String,Object> parmasMap = new HashMap<>();
+        parmasMap.put("itemId",itemId);
+        parmasMap.put("isMain",YesOrNo.YES.type);
+        return itemsImgMapper.selectByItemIdAndIsMain(parmasMap);
+    }
+
+    @Transactional(propagation = Propagation.REQUIRED)
+    @Override
+    public Integer decreaseItemSpecStock(String itemSpecId, Integer buyCounts) {
+        /**
+         * 防止超卖问题:
+         * 1.synchronized 不推荐,性能低下,集群下无用
+         * 2.数据库锁:不推荐,数据库性能低下
+         * 3.分布式锁 zookeeper redis
+         */
+        Map<String,Object> parmasMap = new HashMap<>();
+        parmasMap.put("decreaseStock",buyCounts);
+        parmasMap.put("specId",itemSpecId);
+        int count =  itemsMapperCustom.decreaseItemSpecStock(parmasMap);
+        if(count != 1) {
+            throw new RuntimeException("订单创建失败,原因库存扣除失败!");
+        }
+        return count;
     }
 }

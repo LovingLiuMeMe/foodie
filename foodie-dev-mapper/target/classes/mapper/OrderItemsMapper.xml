@@ -27,22 +27,19 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.lovingliu.pojo.OrderItems" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into order_items (order_id, item_id, item_img, 
+    insert into order_items (id, order_id, item_id, item_img,
       item_name, item_spec_id, item_spec_name, 
       price, buy_counts)
-    values (#{orderId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{itemImg,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR},#{orderId,jdbcType=VARCHAR}, #{itemId,jdbcType=VARCHAR}, #{itemImg,jdbcType=VARCHAR},
       #{itemName,jdbcType=VARCHAR}, #{itemSpecId,jdbcType=VARCHAR}, #{itemSpecName,jdbcType=VARCHAR}, 
       #{price,jdbcType=INTEGER}, #{buyCounts,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="cn.lovingliu.pojo.OrderItems" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into order_items
     <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
       <if test="orderId != null" >
         order_id,
       </if>
@@ -69,6 +66,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
       <if test="orderId != null" >
         #{orderId,jdbcType=VARCHAR},
       </if>

@@ -30,24 +30,21 @@
     where id = #{id,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.lovingliu.pojo.UserAddress" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into user_address (user_id, receiver, mobile, 
+    insert into user_address (id, user_id, receiver, mobile,
       province, city, district, 
       detail, extand, is_default, 
       created_time, updated_time)
-    values (#{userId,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{receiver,jdbcType=VARCHAR}, #{mobile,jdbcType=VARCHAR},
       #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{district,jdbcType=VARCHAR}, 
       #{detail,jdbcType=VARCHAR}, #{extand,jdbcType=VARCHAR}, #{isDefault,jdbcType=INTEGER}, 
       #{createdTime,jdbcType=TIMESTAMP}, #{updatedTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.lovingliu.pojo.UserAddress" >
-    <selectKey resultType="java.lang.String" keyProperty="id" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into user_address
     <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
       <if test="userId != null" >
         user_id,
       </if>
@@ -83,6 +80,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
       <if test="userId != null" >
         #{userId,jdbcType=VARCHAR},
       </if>
@@ -172,4 +172,38 @@
       updated_time = #{updatedTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectByUserId" resultMap="BaseResultMap" parameterType="string">
+    select
+    <include refid="Base_Column_List"/>
+    from user_address
+    where user_id = #{userId}
+  </select>
+  <delete id="deleteByUserIdAndAddressId" parameterType="map">
+    delete
+    from user_address
+    where
+      user_id = #{parmasMap.userId}
+      and
+      id = #{parmasMap.addressId}
+  </delete>
+  <select id="selectByUserIdAndIsDefault" parameterType="map" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from
+        user_address
+    where
+      user_id = #{parmasMap.userId}
+      and
+      is_default = #{parmasMap.isDefault}
+  </select>
+  <select id="selectByPrimaryKeyAndUserId" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List"/>
+    from
+      user_address
+    where
+      id = #{parmasMap.addressId}
+      and
+      user_id = #{parmasMap.userId}
+  </select>
 </mapper>

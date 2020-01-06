@@ -1,8 +1,13 @@
-cn/lovingliu/controller/IndexController.class
-cn/lovingliu/config/SwaggerConfig.class
 cn/lovingliu/controller/PassportController.class
-cn/lovingliu/Application.class
-cn/lovingliu/config/CorsConfig.class
+cn/lovingliu/config/OrderJob.class
+cn/lovingliu/controller/TempResultController.class
 cn/lovingliu/aspect/ServiceLogAspect.class
 cn/lovingliu/controller/ItemsController.class
+cn/lovingliu/controller/PaymentController.class
+cn/lovingliu/controller/OrdersController.class
+cn/lovingliu/controller/IndexController.class
+cn/lovingliu/config/SwaggerConfig.class
+cn/lovingliu/controller/AddressController.class
+cn/lovingliu/Application.class
+cn/lovingliu/config/CorsConfig.class
 cn/lovingliu/controller/ShopController.class

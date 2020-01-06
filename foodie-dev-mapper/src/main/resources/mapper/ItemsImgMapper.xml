@@ -120,4 +120,16 @@
     from items_img
     where item_id = #{itemId}
   </select>
+  <select id="selectByItemIdAndIsMain" parameterType="map" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"/>
+    from
+      items_img
+    where
+      item_id = #{parmasMap.itemId}
+      <if test="parmasMap.isMain != null">
+        and
+        is_main = #{parmasMap.isMain}
+      </if>
+  </select>
 </mapper>

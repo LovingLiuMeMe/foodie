@@ -20,6 +20,12 @@ spring:
       pool-name: DateSourceHikariCP   # 连接池名字
       max-lifetime: 1800000           # 连接的生命时长（毫秒），超时而且没被使用则被释放（retired），默认:30分钟 1800000ms
       connection-test-query: SELECT 1 # 链接时测试的Sql语句
+  thymeleaf:
+    mode: HTML
+    encoding: utf-8
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
 mybatis:
   mapper-locations: classpath:mapper/*.xml # mapper xml文件所在路径 classpath: 指的时所有的resources 文件夹
   type-aliases-package: cn.lovingliu.pojo # 实体类映射

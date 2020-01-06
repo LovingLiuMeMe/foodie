@@ -1,8 +1,10 @@
 package cn.lovingliu.mapper;
 
 import cn.lovingliu.pojo.ItemsImg;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ItemsImgMapper {
     int deleteByPrimaryKey(String id);
@@ -18,4 +20,6 @@ public interface ItemsImgMapper {
     int updateByPrimaryKey(ItemsImg record);
 
     List<ItemsImg> selectByItemId(String itemId);
+
+    ItemsImg selectByItemIdAndIsMain(@Param("parmasMap") Map<String,Object> parmasMap);
 }

@@ -26,22 +26,19 @@
     where order_id = #{orderId,jdbcType=VARCHAR}
   </delete>
   <insert id="insert" parameterType="cn.lovingliu.pojo.OrderStatus" >
-    <selectKey resultType="java.lang.String" keyProperty="orderId" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
-    insert into order_status (order_status, created_time, pay_time, 
+    insert into order_status (order_id, order_status, created_time, pay_time,
       deliver_time, success_time, close_time, 
       comment_time)
-    values (#{orderStatus,jdbcType=INTEGER}, #{createdTime,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP}, 
+    values (#{orderId,jdbcType=VARCHAR}, #{orderStatus,jdbcType=INTEGER}, #{createdTime,jdbcType=TIMESTAMP}, #{payTime,jdbcType=TIMESTAMP},
       #{deliverTime,jdbcType=TIMESTAMP}, #{successTime,jdbcType=TIMESTAMP}, #{closeTime,jdbcType=TIMESTAMP}, 
       #{commentTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="cn.lovingliu.pojo.OrderStatus" >
-    <selectKey resultType="java.lang.String" keyProperty="orderId" order="AFTER" >
-      SELECT LAST_INSERT_ID()
-    </selectKey>
     insert into order_status
     <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="orderId != null" >
+        order_id,
+      </if>
       <if test="orderStatus != null" >
         order_status,
       </if>
@@ -65,6 +62,9 @@
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="orderStatus != null" >
+        #{orderId,jdbcType=VARCHAR},
+      </if>
       <if test="orderStatus != null" >
         #{orderStatus,jdbcType=INTEGER},
       </if>
@@ -126,4 +126,12 @@
       comment_time = #{commentTime,jdbcType=TIMESTAMP}
     where order_id = #{orderId,jdbcType=VARCHAR}
   </update>
+  <select id="selectAllByOrderStatus" parameterType="int" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"/>
+    from
+      order_status
+    where
+      order_status = #{orderStatus}
+  </select>
 </mapper>

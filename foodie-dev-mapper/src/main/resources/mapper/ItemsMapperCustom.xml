@@ -132,4 +132,14 @@
             #{specId}
         </foreach>
   </select>
+  <update id="decreaseItemSpecStock" parameterType="map">
+    update
+      items_spec
+    set
+      stock = stock - #{paramsMap.decreaseStock}
+    where
+      id = #{paramsMap.specId}
+      and
+      stock >= #{paramsMap.decreaseStock} <!-- 乐观锁 防止超卖-->
+  </update>
 </mapper>
