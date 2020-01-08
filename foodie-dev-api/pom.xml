@@ -16,6 +16,7 @@
         api-> commmon-mail
         api通过service是可以使用mapper,pojo,common的方法的
     -->
+    <packaging>war</packaging>
     <dependencies>
         <dependency>
             <groupId>cn.lovingliu</groupId>

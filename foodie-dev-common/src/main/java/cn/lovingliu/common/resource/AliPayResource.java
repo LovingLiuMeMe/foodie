@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(prefix="alipay")
-@PropertySource("classpath:alipay.properties")
+@PropertySource("classpath:alipay-dev.properties")
 public class AliPayResource {
     private String appId;
     private String merchantPrivateKey;

@@ -11,8 +11,10 @@ cn/lovingliu/config/OrderJob.class
 cn/lovingliu/controller/center/CenterCommentsController.class
 cn/lovingliu/controller/PaymentController.class
 cn/lovingliu/controller/OrdersController.class
+cn/lovingliu/config/WebMvcConfig.class
 cn/lovingliu/controller/IndexController.class
 cn/lovingliu/config/SwaggerConfig.class
 cn/lovingliu/controller/center/CenterOrdersController.class
 cn/lovingliu/Application.class
 cn/lovingliu/config/CorsConfig.class
+cn/lovingliu/StartWarApplication.class

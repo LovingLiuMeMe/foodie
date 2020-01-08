@@ -23,6 +23,7 @@ cn/lovingliu/pojo/ItemsImg.class
 cn/lovingliu/pojo/bo/SubmitOrderBO.class
 cn/lovingliu/pojo/vo/MySubOrderItemVO.class
 cn/lovingliu/pojo/vo/ItemCommentVO.class
+cn/lovingliu/pojo/vo/OrderStatusCountsVO.class
 cn/lovingliu/pojo/vo/ItemInfoVO.class
 cn/lovingliu/pojo/ItemsParam.class
 cn/lovingliu/pojo/vo/MyCommentVO.class
