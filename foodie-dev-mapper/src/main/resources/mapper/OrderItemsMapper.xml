@@ -137,4 +137,12 @@
       buy_counts = #{buyCounts,jdbcType=INTEGER}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="selectAllByOrderId" parameterType="string" resultMap="BaseResultMap">
+    select
+      <include refid="Base_Column_List"/>
+    from
+      order_items
+    where
+      order_id = #{orderId}
+  </select>
 </mapper>

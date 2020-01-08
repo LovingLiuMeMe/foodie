@@ -68,7 +68,9 @@ public class ServerResponse<T> implements Serializable {
     public static <T> ServerResponse<T> createByError() {
         return new ServerResponse<T>(500, "error");
     }
-
+    public static <T> ServerResponse<T> createByErrorMap(T errorMap) {
+        return new ServerResponse<T>(500, "error", errorMap);
+    }
     public static <T> ServerResponse<T> createByErrorMessage(String errorMsg) {
         return new ServerResponse<T>(500, errorMsg);
     }

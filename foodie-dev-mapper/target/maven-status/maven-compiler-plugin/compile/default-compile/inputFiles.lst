@@ -1,5 +1,6 @@
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/CategoryMapperCustom.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/StuMapper.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/ItemsCommentsMapperCustom.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/UsersMapper.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/ItemsMapperCustom.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/OrderStatusMapper.java
@@ -10,6 +11,7 @@
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/ItemsSpecMapper.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/CategoryMapper.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/config/MybatisConfig.java
+/Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/OrdersMapperCustom.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/OrderItemsMapper.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/ItemsParamMapper.java
 /Users/lovingliu/Desktop/project/foodie-dev/foodie-dev-mapper/src/main/java/cn/lovingliu/mapper/CarouselMapper.java

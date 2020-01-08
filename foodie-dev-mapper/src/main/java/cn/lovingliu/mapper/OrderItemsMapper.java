@@ -2,6 +2,8 @@ package cn.lovingliu.mapper;
 
 import cn.lovingliu.pojo.OrderItems;
 
+import java.util.List;
+
 public interface OrderItemsMapper {
     int deleteByPrimaryKey(String id);
 
@@ -14,4 +16,6 @@ public interface OrderItemsMapper {
     int updateByPrimaryKeySelective(OrderItems record);
 
     int updateByPrimaryKey(OrderItems record);
+
+    List<OrderItems> selectAllByOrderId(String orderId);
 }

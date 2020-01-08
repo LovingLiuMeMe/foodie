@@ -18,7 +18,7 @@ public interface OrdersService {
      * @param userId
      * @return
      */
-    Orders queryOrderByStatus(String orderId,String userId);
+    Orders queryOrderByOrderIdAndUserId(String orderId,String userId);
 
     /**
      * 修改订单状态

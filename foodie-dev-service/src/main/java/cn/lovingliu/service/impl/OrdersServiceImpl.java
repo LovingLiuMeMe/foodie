@@ -127,7 +127,7 @@ public class OrdersServiceImpl implements OrdersService {
 
     @Transactional(propagation = Propagation.SUPPORTS)
     @Override
-    public Orders queryOrderByStatus(String orderId, String userId) {
+    public Orders queryOrderByOrderIdAndUserId(String orderId, String userId) {
         Map<String,Object> parmasMap = new HashMap<>();
         parmasMap.put("orderId",orderId);
         parmasMap.put("userId",userId);

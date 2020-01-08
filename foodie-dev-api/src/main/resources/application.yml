@@ -26,6 +26,10 @@ spring:
     cache: false
     prefix: classpath:/templates/
     suffix: .html
+  servlet:
+    multipart:
+      max-file-size: 521000 # 文件上传大小限制 500K 200 * 1024
+      max-request-size: 521000 # 请求大小限制
 mybatis:
   mapper-locations: classpath:mapper/*.xml # mapper xml文件所在路径 classpath: 指的时所有的resources 文件夹
   type-aliases-package: cn.lovingliu.pojo # 实体类映射

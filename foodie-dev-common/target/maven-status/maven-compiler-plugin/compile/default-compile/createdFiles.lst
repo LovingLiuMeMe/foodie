@@ -11,6 +11,7 @@ cn/lovingliu/common/util/MD5Util.class
 org/n3r/idworker/WorkerIdStrategy.class
 org/n3r/idworker/InvalidSystemClock.class
 cn/lovingliu/common/resource/AliPayResource.class
+cn/lovingliu/common/resource/FileUpload.class
 META-INF/spring-configuration-metadata.json
 cn/lovingliu/common/enums/CategoryLevel.class
 org/n3r/idworker/Code.class

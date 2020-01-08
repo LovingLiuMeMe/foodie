@@ -45,7 +45,7 @@ public class PaymentController {
                                            @RequestParam String merchantUserId) throws Exception{
 
         // 查询订单详情
-        Orders waitPayOrder = ordersService.queryOrderByStatus(merchantOrderId, merchantUserId);
+        Orders waitPayOrder = ordersService.queryOrderByOrderIdAndUserId(merchantOrderId, merchantUserId);
 
         //获得初始化的AlipayClient
         AlipayClient alipayClient = new DefaultAlipayClient(aliPayResource.getGatewayUrl(),
